@@ -1,0 +1,29 @@
+.item {
+	box-shadow: 0 10px 13px -4px rgba(35, 35, 95, 0.19);
+	border-radius: 18px;
+	cursor: pointer;
+	&:hover {
+		.image-bg img {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.image-bg {
+	border-radius: 18px 18px 0 0;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		width: auto;
+		height: 100%;
+		padding: 10px;
+		object-fit: cover;
+		transition: transform 0.3s;
+	}
+}
+
+.item-name {
+	padding: 18px;
+}

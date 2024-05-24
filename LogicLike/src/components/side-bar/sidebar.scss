@@ -1,0 +1,24 @@
+.sidebar {
+	width: 400px;
+	border: 1px solid rgba(207, 207, 228, 1);
+	height: 100%;
+	padding: 12px;
+	border-radius: 18px;
+}
+
+.sidebarEl {
+	cursor: pointer;
+	border-radius: 12px;
+	border: 1px solid transparent;
+	padding: 12px;
+	transition: all .3s;
+}
+
+.sidebarEl:hover {
+	border: 1px solid rgba(95, 191, 119, 1);
+}
+
+.sidebarElActive {
+	background-color: rgba(95, 191, 119, 1);
+	color: white;
+}

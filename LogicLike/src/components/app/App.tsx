@@ -15,22 +15,25 @@ function App() {
 	const [filteredData, setFilteredData] = useState<IDataItem[] | null>([]);
 	const [activeTag, setActiveTag] = useState<string>('Все темы');
 
-	const handleFilterTags = useCallback(function f(
-		tag: string
-	): void {
-		if (activeTag === tag) return;
-		if (data) {
-			setActiveTag(tag);
-			if (tag === 'Все темы') {
-				setFilteredData(data);
-			} else {
-				const newData = data?.filter((el) => el.tags.some((el) => el === tag));
-				setFilteredData(newData);
+	const handleFilterTags = useCallback(
+		(tag: string): void => {
+			if (activeTag === tag) return;
+			if (data) {
+				setActiveTag(tag);
+				if (tag === 'Все темы') {
+					setFilteredData(data);
+				} else {
+					const newData = data?.filter((el) =>
+						el.tags.some((el) => el === tag)
+					);
+					setFilteredData(newData);
+				}
 			}
-		}
-	}, [activeTag, data]);
+		},
+		[activeTag, data]
+	);
 
-  // Определяем уникальные теги для сайдбара
+	// Определяем уникальные теги для сайдбара
 	const defineUniqTags = useCallback(() => {
 		if (data && data.length > 0) {
 			const arr: string[] = ['Все темы'];
